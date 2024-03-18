@@ -10,17 +10,18 @@ export const InputSearch = ({ onAddPokemon }) => {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        if(inputValue.trim().length <= 1) return;
+        if (inputValue.trim().length <= 1) return;
         onAddPokemon(inputValue.trim().toLowerCase());
         setInputValue('');
     }
 
 
     return (
-        <form onSubmit={(event) => onSubmit(event)}>
+        <form className='w-1/2 mx-auto' onSubmit={(event) => onSubmit(event)}>
             <input
+                className='border border-gray-300 w-full px-3 py-2 mb-4 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400'
                 type="text"
-                placeholder='Busca tus pokemom'
+                placeholder='Busca tus pokemòn...'
                 value={inputValue}
                 onChange={(event) => handleInputValue(event)}
             />
